@@ -1,0 +1,6 @@
+numpy
+plotly
+skimage
+tifffile
+torch
+torchvision
