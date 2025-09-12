@@ -1,4 +1,4 @@
-function [doct,Ht,St,Bt] = doct_gpu_monfort(imageT,fps)
+function [doct,Ht,St,Bt] = doct_PSDm_hsv_gpu_monfort(imageT,fps)
 %Author Tual MONFORT
 %imageT is a 2D space image over time, e.g. size(imageT)= x y t
 %fps is the number of frames per second
@@ -58,6 +58,7 @@ function [doct,Ht,St,Bt] = doct_gpu_monfort(imageT,fps)
   doct_hsv(:,:,2) = (St);
   doct_hsv(:,:,3) = (Bt);
   doct = hsv2rgb(doct_hsv);
+
 
 
 end
