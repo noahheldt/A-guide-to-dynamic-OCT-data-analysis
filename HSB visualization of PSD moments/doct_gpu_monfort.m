@@ -1,5 +1,6 @@
-function [doct,Ht,St,Bt] = doct_PSDm_hsv_gpu_monfort(imageT,fps)
+function [doct,Ht,St,Bt] = doct_MSm_hsv_gpu_monfort(imageT,fps)
 %Author Tual MONFORT
+%In the paper, what is referred to as PSD moments visualization should actually be referred to as Magnitude spectrum moments visualization.
 %The code builds up upon Jules Scholler's original script from 2020 (https://doi.org/10.1038/s41377-020-00375-8), albeit with a better optimisation for calculation on the GPU
 %imageT is a 2D space image over time, e.g. size(imageT)= x y t
 %fps is the number of frames per second
@@ -15,7 +16,7 @@ function [doct,Ht,St,Bt] = doct_PSDm_hsv_gpu_monfort(imageT,fps)
 %<|Delta_I|>
   B=mean(abs(diff(imageT,1,3)),3);
 
-%PSD
+%Magnitude spectrum (MS)
   imagefreq = abs(fft(gpuArray(imageT),[],3));
   imagefreq = imagefreq(:,:,2:s(3)/2+1);
   N=reshape(repmat(sum(imagefreq,3),1,floor(s(3)/2)),s(1),s(2),floor(s(3)/2));
@@ -63,4 +64,5 @@ function [doct,Ht,St,Bt] = doct_PSDm_hsv_gpu_monfort(imageT,fps)
 
 
 end
+
 
