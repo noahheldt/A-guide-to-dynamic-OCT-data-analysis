@@ -1,6 +1,6 @@
 function [doct,Ht,St,Bt] = doct_MSm_hsv_gpu_monfort(imageT,fps)
 %Author Tual MONFORT
-%In the paper, what is referred to as PSD moments visualization should actually be referred to as Magnitude spectrum moments visualization.
+%In the paper (A guide to dynamic OCT data analysis), what is referred to as PSD moments visualization should actually be referred to as Magnitude spectrum moments visualization.
 %The code builds up upon Jules Scholler's original script from 2020 (https://doi.org/10.1038/s41377-020-00375-8), albeit with a better optimisation for calculation on the GPU
 %imageT is a 2D space image over time, e.g. size(imageT)= x y t
 %fps is the number of frames per second
@@ -64,5 +64,6 @@ function [doct,Ht,St,Bt] = doct_MSm_hsv_gpu_monfort(imageT,fps)
 
 
 end
+
 
 
