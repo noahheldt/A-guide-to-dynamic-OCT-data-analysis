@@ -69,7 +69,7 @@ def rgb_frequency_binning(
 
     for i in range(3):
         # Saturate top 0.01 and bottom 0.1 percent of unique values
-        dynamic[i, ...] = saturate_values(dynamic)
+        dynamic[i, ...] = saturate_values(dynamic[i, ...])
 
         dynamic[i, ...] = rescale_range(dynamic[i, ...])
 
